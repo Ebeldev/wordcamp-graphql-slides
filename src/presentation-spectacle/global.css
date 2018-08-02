@@ -1,0 +1,22 @@
+
+@font-face {
+    font-family: "Alfa Slab One";
+    font-style: normal;
+    font-weight: 400;
+    src: 
+    url('./assets/fonts/Alfa_Slab_One/AlfaSlabOne-Regular.ttf') format('ttf'),
+    url('./assets/fonts/Alfa_Slab_One/alfaslabone-regular-webfont.woff') format('woff'),
+    url('./assets/fonts/Alfa_Slab_One/alfaalabone-regular-webfont.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: "Quattro";
+    font-style: normal;
+    font-weight: 400;
+    src: 
+    url('../assets/fonts/Quattrocento_Sans/QuattrocentoSans-Regular.ttf') format('ttf'),
+    url('../assets/fonts/Quattrocento_Sans/QuattrocentoSans-Regular.ttf') format('woff'),
+    url('../assets/fonts/Quattrocento_Sans/QuattrocentoSans-Regular.ttf') format('woff2');
+  }
+
+  *{border: red 1px solid;}
