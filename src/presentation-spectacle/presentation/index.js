@@ -59,6 +59,7 @@ const theme = createTheme({
 
 const images = {
   mainBg: require('../assets/background-blocks.png'),
+  selfPortrait: require('../assets/fakeAutoportrait.png'),
   learnJavascript: require('../assets/learn-javascript.png'),
   headlessWordpress: require('../assets/headless-wordpress.png'),
   graphqlLogo: require('../assets/graphql-logo.png'),
@@ -75,6 +76,11 @@ const images = {
   internetOfThings1: require('../assets/internet-of-things-1.png'),
   internetOfThings2: require('../assets/internet-of-things-2.png'),
   internetOfThings3: require('../assets/internet-of-things-3.png'),
+  createClient: require('../assets/graphql-client-create-client.png'),
+  connectApp: require('../assets/graphql-client-connect-app.png'),
+  importIntoComponent: require('../assets/importIntoComponent.png'),
+  gqlQuery: require('../assets/gql-query.png'),
+  queryComponent: require('../assets/querycomponent.png'),
   victory: require('../assets/victory.jpg'),
 };
 
@@ -93,16 +99,38 @@ export default class Presentation extends React.Component {
           <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold textFont="secondary">with GraphQL & ReactJS</Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor" padding="0">
-          <Image src={images.learnJavascript} height="900px"/>
+          <Image src={images.learnJavascript} />
         </Slide>
         <Slide  bgColor="bgColor">
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold textFont="secondary">the goal for today</Text>
+          <Text margin="10px 0 30px" textColor="tertiary" bold textFont="secondary" textSize="40px">the goal for today</Text>
+          <Text margin="10px 0 0" textColor="white"bold textFont="secondary" textSize="50px">Use Wordpress as a backend service api & use new stack to deliver the front-end</Text>
         </Slide>
         <Slide  bgColor="bgColor">
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold textFont="secondary">who im i</Text>
+        <Layout>
+          <Fill>
+            <Image src={images.selfPortrait} style={ClipImage} />
+          </Fill>
+          <Fill>
+            <Heading size={2} textColor="white" caps>Étienne Bélanger</Heading>
+            <List textColor="primary" style={ListStyle}>
+              <ListItem margin="0 0 20px 0">Self-taugh web developper</ListItem>
+              <ListItem margin="0 0 20px 0">Been working with Wordpress for 10 years</ListItem>
+              <ListItem margin="0 0 20px 0">Work @ DistrictWeb as full-stack developper</ListItem>
+              <ListItem margin="0 0 20px 0" bold>Contact</ListItem>
+              <ListItem margin="0 0 20px 0"><i className="far fa-envelope"></i> etienne@etiennebelanger.com</ListItem>
+              <ListItem margin="0 0 20px 0"><i className="fab fa-linkedin"></i> belangeretienne</ListItem>
+              <ListItem margin="0 0 20px 0"><i className="fab fa-twitter"></i> @ebeldev</ListItem>
+              <ListItem margin="0 0 20px 0"><i className="fab fa-github"></i> @ebeldev</ListItem>
+            </List>
+          </Fill>
+        </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor" bgImage={images.fastinternet}>
           <Text margin="10px 0 0" textColor="black" size={1} fit bold textFont="secondary">Deliver fast the content</Text>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor">
+          <Text> put in image on standard cms vs decoupled
+          </Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor">
           <Image src={images.internetOfThings1} height="80vh"/>
@@ -120,7 +148,7 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill>
               <Heading size={2} textColor="white" caps>Advantages of Headless CMS</Heading>
-              <List textAlign="center" textColor="primary" padding="30px">
+              <List textAlign="center" textColor="primary" padding="30px" style={ListStyle}>
                 <Appear>
                   <ListItem textSize="50px" padding="30px">separate content and presentation</ListItem>
                 </Appear>
@@ -138,7 +166,7 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill style={divStyle}>
               <Heading size={2} textColor="white" caps>Rest Api</Heading>
-              <Text textColor="grey" textFont="secondary">/wp-json/v2/</Text>
+              <Text textColor="grey" textFont="secondary">/wp-json/wp/v2/</Text>
             </Fill>
             <Fill>
               <Image src={images.restapi} />
@@ -153,8 +181,8 @@ export default class Presentation extends React.Component {
             </Fill>
             <Fill>
               <Heading size={2} textColor="white" caps>Rest Api</Heading>
-              <Text textColor="grey">/wp-json/v2/</Text>
-              <List textAlign="center" textColor="primary" padding="30px">
+              <Text textColor="grey">/wp-json/wp/v2/</Text>
+              <List textAlign="center" textColor="primary" padding="30px" style={ListStyle}>
                 <Appear>
                   <ListItem textSize="50px" padding="30px">/posts</ListItem>
                 </Appear>
@@ -174,15 +202,15 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bgColor" padding="0">
           <Heading size={2} textColor="white" caps>Rest Api</Heading>
           <Text textColor="white">desavantages</Text>
-          <List textAlign="center" textColor="primary" padding="30px">
+          <List textAlign="center" textColor="primary" padding="30px" style={ListStyle}>
             <Appear>
-              <ListItem textSize="50px" padding="30px">OverFetching = a client downloads more information than is actually</ListItem>
+              <ListItem textSize="50px" padding="30px">OverFetching <Text textColor="white">a client downloads more information than is actually</Text></ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="50px" padding="30px">Underfetching = a specific endpoint doesn’t provide enough of the required information</ListItem>
+              <ListItem textSize="50px" padding="30px">Underfetching <Text textColor="white"> a specific endpoint doesn’t provide enough of the required information</Text></ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="50px" padding="30px">Maintainability</ListItem>
+              <ListItem textSize="50px" padding="30px">Maintainability and Scalability<Text textColor="white">having too many endpoints </Text></ListItem>
             </Appear>
           </List>
         </Slide>
@@ -196,21 +224,21 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bgColor" padding="0">
           <Heading size={2} textColor="white" caps>GraphQL</Heading>
           <Text textColor="white" textSize="50px" padding="40px 0 0 0">Type of operations you can do on your api</Text>
-          <List textAlign="center" textColor="primary" padding="30px">
+          <List textAlign="center" textColor="primary" padding="30px" style={ListStyle}>
             <Appear>
-              <ListItem textSize="50px" padding="30px">Query = get data</ListItem>
+              <ListItem textSize="50px" padding="30px">Query <Text textColor="white">get data</Text></ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="50px" padding="30px">Mutation = modify your data</ListItem>
+              <ListItem textSize="50px" padding="30px">Mutation<Text textColor="white">modify your data</Text></ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="50px" padding="30px">Subscription = subscribe to action</ListItem>
+              <ListItem textSize="50px" padding="30px">Subscription <Text textColor="white">subscribe to action</Text></ListItem>
             </Appear>
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
           <Heading size={2} textColor="white" caps>GraphQL</Heading>
-          <Text textColor="white">consist of two core concepts</Text>
+          <Text textColor="white">consist of two blocks</Text>
           <Layout>
             <Fill>
               <Heading size={6} textColor="white" caps padding="40px 0 0 0">Server</Heading>
@@ -238,7 +266,7 @@ export default class Presentation extends React.Component {
           <Layout>
             <Fill>
               <Heading size={6} textColor="white" caps padding="40px 0 0 0">Server</Heading>
-              <List textAlign="center" textColor="primary" padding="30px">
+              <List textAlign="center" textColor="primary" padding="30px" style={ListStyle}>
                 <Appear>
                   <ListItem textSize="50px" padding="30px">Custom
                   </ListItem>
@@ -263,10 +291,10 @@ export default class Presentation extends React.Component {
             </Fill>
             <Fill>
               <Heading size={6} textColor="white" caps padding="40px 0 0 0">Client</Heading>
-              <List textAlign="center" textColor="primary" padding="30px">
+              <List textAlign="center" textColor="primary" padding="30px" style={ListStyle}>
                 <Appear>
                   <ListItem textSize="50px" padding="30px">Relay
-                    <Text textColor="white">From Facebook, for more advance</Text>
+                    <Text textColor="white">From Facebook, for more advance developpers</Text>
                   </ListItem>
                 </Appear>
                 <Appear>
@@ -282,32 +310,117 @@ export default class Presentation extends React.Component {
           <Image src={images.graphqlNode} height="80vh"/>
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
+          <Heading size={2} textColor="white" caps>Wordpress Setup</Heading>
+          <List textAlign="left" textColor="primary" padding="0 30px 30px" style={ListStyle}>
+            <Appear>
+              <ListItem textSize="40px" padding="20px">Install wp-graphql plugin</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
+          <Heading size={5} textColor="white" caps>Extending Wp-Graphql plugin</Heading>
+          <List textAlign="left" textColor="primary" padding="0 30px 30px" style={ListStyle}>
+            <Appear>
+              <ListItem textSize="30px" padding="20px">in your theme functions.php</ListItem>
+            </Appear>
+            <Appear>
+              <CodePane textSize="15px"
+            lang="php"
+            source={require('raw-loader!../assets/code/wpgraphql-extends.php')}
+            margin="20px auto"
+            overflow="overflow"
+          />
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
           <Heading size={2} textColor="white" caps>ReactJS Setup</Heading>
-          <List textAlign="left" textColor="primary" padding="30px">
+          <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
             <Appear>
               <ListItem textSize="40px" padding="20px">NodeJs</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="40px" padding="20px">npm install create-react-app -g nameofproject</ListItem>
+              <ListItem textSize="40px" padding="20px">In your command line</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="40px" padding="20px">cd into nameofproject</ListItem>
+              <ListItem textSize="40px" padding="0 0 0 40px">npm install create-react-app -g</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="40px" padding="20px">npm install apollo-boost react-apollo graphql —-save
-                <Text textColor="white">apollo-boost: Apollo-Client</Text>
-                <Text textColor="white">react-apollo: View layer integration in react</Text>
-                <Text textColor="white">graphql: Parses GraphQL queries</Text>
+              <ListItem textSize="40px" padding="0 0 0 40px">create-react-app nameofyourproject</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="40px" padding="0 0 0 40px">cd into nameofproject</ListItem>
+            </Appear>
+            <Appear>
+              <ListItem textSize="40px" padding="0 0 0 40px">npm install apollo-boost react-apollo graphql —-save
+                <Text padding="0 0 0 40px" textColor="white">apollo-boost: Apollo-Client</Text>
+                <Text padding="0 0 0 40px" textColor="white">react-apollo: View layer integration in react</Text>
+                <Text padding="0 0 0 40px" textColor="white">graphql: Parses GraphQL queries</Text>
               </ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="40px" padding="20px">npm install react-router-dom —save</ListItem>
+              <ListItem textSize="40px" padding="0 0 0 40px">npm install react-router-dom —save</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="40px" padding="20px">yarn start</ListItem>
+              <ListItem textSize="40px" padding="0 0 0 40px">yarn start</ListItem>
             </Appear>
             <Appear>
-              <ListItem textSize="40px" padding="20px">localhost:3000</ListItem>
+              <ListItem textSize="40px" padding="0 0 0 40px">localhost:3000</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
+          <Heading size={2} textColor="white" caps>Apollo-Boost Client Setup</Heading>
+          <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
+            <Appear>
+              <ListItem textSize="40px" padding="20px">Create a client</ListItem>
+            </Appear>
+            <Appear>
+              <Image src={images.createClient}/>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
+          <Heading size={2} textColor="white" caps>Apollo-Boost Client Setup</Heading>
+          <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
+            <Appear>
+              <ListItem textSize="40px" padding="20px">Connect your app with Client</ListItem>
+            </Appear>
+            <Appear>
+              <Image src={images.connectApp}/>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
+          <Heading size={2} textColor="white" caps>Apollo-Boost Client Setup</Heading>
+          <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
+            <Appear>
+              <ListItem textSize="40px" padding="20px">In your component, import modules</ListItem>
+            </Appear>
+            <Appear>
+              <Image src={images.importIntoComponent}/>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
+          <Heading size={2} textColor="white" caps>Apollo-Boost Client Setup</Heading>
+          <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
+            <Appear>
+              <ListItem textSize="40px" padding="20px">In your component, make the query</ListItem>
+            </Appear>
+            <Appear>
+              <Image src={images.gqlQuery}/>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
+          <Heading size={2} textColor="white" caps>Apollo-Boost Client Setup</Heading>
+          <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
+            <Appear>
+              <ListItem textSize="40px" padding="20px">In your component, use Query component</ListItem>
+            </Appear>
+            <Appear>
+              <Image src={images.queryComponent}/>
             </Appear>
           </List>
         </Slide>
@@ -316,9 +429,15 @@ export default class Presentation extends React.Component {
         </Slide> 
         <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
           <Heading size={2} textColor="white" caps>Extra</Heading>
-          <List textAlign="left" textColor="primary" padding="30px">
-            <ListItem textSize="40px" padding="20px">GraphQL + Wordpress : https://www.youtube.com/watch?v=tYXlHb2eyQw</ListItem>
-            <ListItem textSize="40px" padding="20px">Apollo GraphQL : https://www.apollographql.com/</ListItem>
+          <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
+            <ListItem textSize="40px" padding="20px">GraphQL + Wordpress with Jason Bahl 
+              <Text textColor="white">
+              https://www.youtube.com/watch?v=tYXlHb2eyQw
+              </Text>
+            </ListItem>
+            <ListItem textSize="40px" padding="20px">Apollo GraphQL 
+              <Text textColor="white">apollographql.com</Text>
+              </ListItem>
           </List>
         </Slide>       
       </Deck>
@@ -336,4 +455,14 @@ const startStyle = {
   display: "flex",
   flexDirection: "column",
   justifyContent: "flex-start"
+};
+
+const ListStyle = {
+  listStyleType: 'none',
+  padding: '0 0 0 40px'
+};
+
+const ClipImage = {
+  clipPath: 'polygon( 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25% )',
+  height: '70vh',
 };
