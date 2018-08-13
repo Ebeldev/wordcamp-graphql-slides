@@ -59,15 +59,17 @@ const theme = createTheme({
 
 const images = {
   mainBg: require('../assets/background-blocks.png'),
-  selfPortrait: require('../assets/fakeAutoportrait.png'),
+  selfPortrait: require('../assets/portrait2018.jpg'),
   learnJavascript: require('../assets/learn-javascript.png'),
+  traditionalCms: require('../assets/traditional-cms.png'),
   headlessWordpress: require('../assets/headless-wordpress.png'),
+  headlessDecoupled: require('../assets/headless-decoupled.png'),
   graphqlLogo: require('../assets/graphql-logo.png'),
-  // graphVsRest: require('../assets/graphql-vs-rest.png'),
   graphVsRest: require('../assets/rest-vs-graphql.png'),
   graphVsRestWhite: require('../assets/graphql-vs-rest-white.png'),
   graphNode: require('../assets/graphql-node.jpg'),
   fastinternet: require('../assets/fast-internet.jpg'),
+  fastinternet: require('../assets/Mosaic-Web-Browser.png'),
   restapi: require('../assets/rest-api.png'),
   cardUi: require('../assets/card-ui.png'),
   graphqlServer: require('../assets/graphql-server.png'),
@@ -78,6 +80,7 @@ const images = {
   internetOfThings3: require('../assets/internet-of-things-3.png'),
   createClient: require('../assets/graphql-client-create-client.png'),
   connectApp: require('../assets/graphql-client-connect-app.png'),
+  importApolloProvider: require('../assets/importApolloProvider.png'),
   importIntoComponent: require('../assets/importIntoComponent.png'),
   gqlQuery: require('../assets/gql-query.png'),
   queryComponent: require('../assets/querycomponent.png'),
@@ -125,12 +128,21 @@ export default class Presentation extends React.Component {
           </Fill>
         </Layout>
         </Slide>
-        <Slide transition={["fade"]} bgColor="bgColor" bgImage={images.fastinternet}>
-          <Text margin="10px 0 0" textColor="black" size={1} fit bold textFont="secondary">Deliver fast the content</Text>
+        <Slide transition={["fade"]} bgColor="bgColor">
+        <Layout>
+          <Fill>
+            <Image src={images.fastinternet} height="80vh"/>
+          </Fill>
+          <Fill>
+            <Heading size={2} textColor="white" caps margin="0 0 40px 0">The web has changed a lot</Heading>
+          <Appear>
+            <Heading size={2} textColor="white" caps>and so did Wordpress</Heading>
+          </Appear>
+          </Fill>
+        </Layout>
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor">
-          <Text> put in image on standard cms vs decoupled
-          </Text>
+          <Image src={images.traditionalCms} height="80vh"/>
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor">
           <Image src={images.internetOfThings1} height="80vh"/>
@@ -140,6 +152,9 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor">
           <Image src={images.internetOfThings3} height="80vh"/>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor">
+          <Image src={images.headlessDecoupled} height="80vh"/>
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor">
           <Image src={images.headlessWordpress} />
@@ -268,21 +283,21 @@ export default class Presentation extends React.Component {
               <Heading size={6} textColor="white" caps padding="40px 0 0 0">Server</Heading>
               <List textAlign="center" textColor="primary" padding="30px" style={ListStyle}>
                 <Appear>
-                  <ListItem textSize="50px" padding="30px">Custom
+                  <ListItem textSize="40px" padding="20px">Custom
                   </ListItem>
                 </Appear>
                 <Appear>
-                  <ListItem textSize="50px" padding="30px">Graph.cool
+                  <ListItem textSize="40px" padding="20px">Graph.cool
                     <Text textColor="white">Framework for self-hosted GraphQL server</Text>
                   </ListItem>
                 </Appear>
                 <Appear>
-                  <ListItem textSize="50px" padding="30px">WordExpress
+                  <ListItem textSize="40px" padding="20px">WordExpress
                     <Text textColor="white">Framework to help develop Wordpress applications (server + client)</Text>
                   </ListItem>
                 </Appear>
                 <Appear>
-                  <ListItem textSize="50px" padding="30px">wp-graphql
+                  <ListItem textSize="40px" padding="20px">wp-graphql
                     <Text textColor="white">Wordpress plugin</Text>
                     <Text textColor="white" textSize="22px">https://github.com/wp-graphql/wp-graphql</Text>
                   </ListItem>
@@ -382,9 +397,12 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
           <Heading size={2} textColor="white" caps>Apollo-Boost Client Setup</Heading>
-          <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
+          <List textAlign="left" textColor="primary" padding="30px 0 0" style={ListStyle}>
             <Appear>
               <ListItem textSize="40px" padding="20px">Connect your app with Client</ListItem>
+            </Appear>
+            <Appear>
+              <Image src={images.importApolloProvider}/>
             </Appear>
             <Appear>
               <Image src={images.connectApp}/>
