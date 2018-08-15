@@ -14,3 +14,6 @@ Installing
 3. npm start
 
 Based on the spectacle ReactJS library
+
+To see the project presented at the end of the slides
+https://github.com/Ebeldev/wordcampmtl2018react
