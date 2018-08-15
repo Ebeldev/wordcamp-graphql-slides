@@ -68,8 +68,8 @@ const images = {
   graphVsRest: require('../assets/rest-vs-graphql.png'),
   graphVsRestWhite: require('../assets/graphql-vs-rest-white.png'),
   graphNode: require('../assets/graphql-node.jpg'),
-  fastinternet: require('../assets/fast-internet.jpg'),
   fastinternet: require('../assets/Mosaic-Web-Browser.png'),
+  oldWordpress: require('../assets/old-wordpress.png'),
   restapi: require('../assets/rest-api.png'),
   cardUi: require('../assets/card-ui.png'),
   graphqlServer: require('../assets/graphql-server.png'),
@@ -99,7 +99,7 @@ export default class Presentation extends React.Component {
       <Deck transition={["slide"]} transitionDuration={400} theme={theme} progress="none" contentHeight="100vh" contentWidth="85vw" controls={false}>
         <Slide transition={["fade"]} bgColor="bgColor" bgImage={images.mainBg}>
           <Heading size={1} fit caps lineHeight={1} textColor="secondary" bold={false}>Headless wordpress</Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold textFont="secondary">with GraphQL & ReactJS</Text>
+          <Text margin="10px 0 0" textColor="white" size={1} fit bold textFont="secondary">with GraphQL & ReactJS</Text>
         </Slide>
         <Slide transition={["fade"]} bgColor="bgColor" padding="0">
           <Image src={images.learnJavascript} />
@@ -131,13 +131,20 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="bgColor">
         <Layout>
           <Fill>
-            <Image src={images.fastinternet} height="80vh"/>
+            <Image src={images.fastinternet}/>
           </Fill>
           <Fill>
             <Heading size={2} textColor="white" caps margin="0 0 40px 0">The web has changed a lot</Heading>
-          <Appear>
+          </Fill>
+        </Layout>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor">
+        <Layout>
+          <Fill>
+            <Image src={images.oldWordpress}/>
+          </Fill>
+          <Fill>
             <Heading size={2} textColor="white" caps>and so did Wordpress</Heading>
-          </Appear>
           </Fill>
         </Layout>
         </Slide>
@@ -451,6 +458,11 @@ export default class Presentation extends React.Component {
             <ListItem textSize="40px" padding="20px">GraphQL + Wordpress with Jason Bahl 
               <Text textColor="white">
               https://www.youtube.com/watch?v=tYXlHb2eyQw
+              </Text>
+            </ListItem>
+            <ListItem textSize="40px" padding="20px">GraphQL + Wordpress Learning site
+              <Text textColor="white">
+              https://edwincromley.gitbooks.io/wp-graphql/content/
               </Text>
             </ListItem>
             <ListItem textSize="40px" padding="20px">Apollo GraphQL 
