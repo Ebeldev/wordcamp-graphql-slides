@@ -453,6 +453,21 @@ export default class Presentation extends React.Component {
           <Image src={images.victory} height="80vh"/>
         </Slide> 
         <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
+          <Heading size={2} textColor="white" caps>Démo</Heading>
+          <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
+            <ListItem textSize="40px" padding="20px">Download the slides 
+              <Text textColor="white">
+              https://github.com/Ebeldev/wordcamp-graphql-slides
+              </Text>
+            </ListItem>
+            <ListItem textSize="40px" padding="20px">Download the demo
+              <Text textColor="white">
+              https://github.com/Ebeldev/wordcampmtl2018react
+              </Text>
+            </ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="bgColor" padding="40px 0 0 0" align="flex-start">
           <Heading size={2} textColor="white" caps>Extra</Heading>
           <List textAlign="left" textColor="primary" padding="30px" style={ListStyle}>
             <ListItem textSize="40px" padding="20px">GraphQL + Wordpress with Jason Bahl 
