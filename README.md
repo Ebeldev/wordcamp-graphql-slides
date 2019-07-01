@@ -1,3 +1,12 @@
+# not maintened anymore
+This directory has been changed to:
+
+See the git repo : https://github.com/Ebeldev/headlesswordpress-slides
+
+See the presentation slides: https://ebeldev.github.io/headlesswordpress-slides/
+
+
+
 Project Title
 Wordcamp Montreal 2018 - Headless worpress with GraphQL & ReactJS
 
